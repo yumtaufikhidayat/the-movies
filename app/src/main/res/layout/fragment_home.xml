@@ -12,6 +12,10 @@
         android:id="@+id/toolbarHome"
         layout="@layout/toolbar_general"/>
 
+    <include
+        android:id="@+id/layoutError"
+        layout="@layout/layout_error"/>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvHome"
         android:layout_width="match_parent"
@@ -34,9 +38,5 @@
         app:tint="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-
-    <!--<include
-        android:id="@+id/layoutError"
-        layout="@layout/layout_error"/>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
