@@ -1,7 +1,9 @@
 package com.yumtaufikhidayat.themovies.di
 
 import android.content.Context
+import com.yumtaufikhidayat.themovies.BuildConfig
 import com.yumtaufikhidayat.themovies.data.remote.ApiService
+import com.yumtaufikhidayat.themovies.data.remote.UrlConstant
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,7 +30,7 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideBaseUrl() = BuildConfig.BASE_URL
+    fun provideBaseUrl() = UrlConstant.BASE_URL
 
     @Provides
     @Singleton
