@@ -36,7 +36,7 @@ class SplashScreenFragment : Fragment() {
 
     private fun navigateToHome() {
         lifecycleScope.launch {
-            delay(2.seconds)
+            delay(3.seconds)
             findNavController().apply {
                 popBackStack()
                 navigate(R.id.homeFragment)
