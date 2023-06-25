@@ -28,7 +28,8 @@ class LoadMoreAdapter(private val retry: () -> Unit): LoadStateAdapter<LoadMoreA
         loadState: LoadState
     ) = holder.bind(loadState)
 
-    inner class LoadMoreViewHolder(private val binding: LoadMoreBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class LoadMoreViewHolder(private val binding: LoadMoreBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(state: LoadState) {
             binding.apply {
                 pbLoadMore.isVisible = state is LoadState.Loading

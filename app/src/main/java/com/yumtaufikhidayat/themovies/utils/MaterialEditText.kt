@@ -31,11 +31,11 @@ class MaterialEditText : AppCompatEditText, View.OnTouchListener {
     ) {
         init()
     }
-    
+
     private fun init() {
         searchIcon = ContextCompat.getDrawable(context, R.drawable.outline_search) as Drawable
         clearIcon = ContextCompat.getDrawable(context, R.drawable.outline_clear) as Drawable
-    
+
         setOnTouchListener(this)
 
         when (id) {
@@ -132,11 +132,13 @@ class MaterialEditText : AppCompatEditText, View.OnTouchListener {
                                 hideClearButton()
                                 return true
                             }
+
                             else -> return false
                         }
                     } else return false
                 }
             }
+
             else -> return false
         }
 

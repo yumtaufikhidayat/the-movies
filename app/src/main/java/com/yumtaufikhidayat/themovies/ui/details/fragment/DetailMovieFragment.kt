@@ -82,6 +82,7 @@ class DetailMovieFragment : Fragment() {
             }
         }
     }
+
     private fun setDetailMovieObserver() {
         detailsViewModel.getDetailMovies(idMovie).observe(viewLifecycleOwner) {
             when (it) {
@@ -89,19 +90,23 @@ class DetailMovieFragment : Fragment() {
                     showLayoutError(false, "")
                     showLoading(true)
                 }
+
                 is NetworkResult.Success -> {
                     showLayoutError(false, "")
                     showLoading(false)
                     setDetailData(it.data)
                 }
+
                 is NetworkResult.Error -> {
                     showLoading(false)
                     showLayoutError(true, it.error)
                 }
+
                 is NetworkResult.ServerError -> {
                     showLoading(false)
                     showLayoutError(true, it.error)
                 }
+
                 is NetworkResult.Unauthorized -> {
                     showLoading(false)
                     showLayoutError(true, it.error)
@@ -159,7 +164,8 @@ class DetailMovieFragment : Fragment() {
 
             when {
                 data.productionCountries.isEmpty() -> tvCountry.text = getString(R.string.tvNA)
-                else -> tvCountry.text = data.productionCountries.joinToString { countries -> countries.iso31661 }
+                else -> tvCountry.text =
+                    data.productionCountries.joinToString { countries -> countries.iso31661 }
             }
 
             when {
@@ -223,7 +229,8 @@ class DetailMovieFragment : Fragment() {
     private fun setCastAdapter() {
         binding.rvMovieCast.apply {
             val helper: SnapHelper = LinearSnapHelper()
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             helper.attachToRecyclerView(this)
             setHasFixedSize(true)
             adapter = castAdapter
@@ -254,7 +261,8 @@ class DetailMovieFragment : Fragment() {
     private fun setTrailerVideoAdapter() {
         binding.rvTrailerVideo.apply {
             val helper: SnapHelper = LinearSnapHelper()
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             helper.attachToRecyclerView(this)
             setHasFixedSize(true)
             adapter = trailerVideoAdapter
@@ -285,7 +293,8 @@ class DetailMovieFragment : Fragment() {
     private fun setReviewsAdapter() {
         binding.rvMovieReviews.apply {
             val helper: SnapHelper = LinearSnapHelper()
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             helper.attachToRecyclerView(this)
             setHasFixedSize(true)
             adapter = reviewsAdapter

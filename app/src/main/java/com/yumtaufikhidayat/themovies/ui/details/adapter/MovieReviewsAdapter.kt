@@ -31,25 +31,25 @@ class MovieReviewsAdapter: ListAdapter<ReviewsResult, MovieReviewsAdapter.ViewHo
 
     inner class ViewHolder(private val binding: ItemReviewsBinding) :
         RecyclerView.ViewHolder(binding.root) {
-            fun bind(data: ReviewsResult) {
-                binding.apply {
-                    val author = data.authorDetails
-                    imgReviewer.loadImage(author.avatarPath)
-                    tvReviewerName.text = data.author
-                    tvReviewerRating.text = String.format("%s%s", author.rating.toString(), "/10")
-                    tvReviewerDate.text = data.updatedAt.convertDate(
-                        Constant.FULL_FORMAT,
-                        Constant.EEE_D_MMM_YYYY_FORMAT
-                    )
-                    tvReviewerReview.text = data.content
-                    cardReview.setOnClickListener {
-                        try {
-                            val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse(data.url))
-                            it.context.startActivity(Intent.createChooser(intentBrowser, "Open with:"))
-                        } catch (_: Exception) { }
-                    }
+        fun bind(data: ReviewsResult) {
+            binding.apply {
+                val author = data.authorDetails
+                imgReviewer.loadImage(author.avatarPath)
+                tvReviewerName.text = data.author
+                tvReviewerRating.text = String.format("%s%s", author.rating.toString(), "/10")
+                tvReviewerDate.text = data.updatedAt.convertDate(
+                    Constant.FULL_FORMAT,
+                    Constant.EEE_D_MMM_YYYY_FORMAT
+                )
+                tvReviewerReview.text = data.content
+                cardReview.setOnClickListener {
+                    try {
+                        val intentBrowser = Intent(Intent.ACTION_VIEW, Uri.parse(data.url))
+                        it.context.startActivity(Intent.createChooser(intentBrowser, "Open with:"))
+                    } catch (_: Exception) { }
                 }
             }
+        }
     }
 
     companion object {

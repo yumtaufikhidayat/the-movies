@@ -6,11 +6,10 @@ import com.yumtaufikhidayat.themovies.data.remote.ApiService
 import com.yumtaufikhidayat.themovies.model.main.MovieMainResult
 import com.yumtaufikhidayat.themovies.utils.Constant
 import retrofit2.HttpException
-import java.lang.Exception
 
 class MoviePagingSource(
     private val apiService: ApiService
-) : PagingSource<Int, MovieMainResult>(){
+) : PagingSource<Int, MovieMainResult>() {
     override fun getRefreshKey(state: PagingState<Int, MovieMainResult>): Int? {
         return state.anchorPosition?.let { anchorPosition ->
             val anchorPage = state.closestPageToPosition(anchorPosition)

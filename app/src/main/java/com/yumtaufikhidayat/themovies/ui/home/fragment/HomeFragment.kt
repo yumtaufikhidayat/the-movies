@@ -29,7 +29,7 @@ class HomeFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val homeViewModel by viewModels<HomeViewModel>()
-    private val movieAdapter by lazy { MovieAdapter { navigateToDetail(it.id, it.title) }}
+    private val movieAdapter by lazy { MovieAdapter { navigateToDetail(it.id, it.title) } }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

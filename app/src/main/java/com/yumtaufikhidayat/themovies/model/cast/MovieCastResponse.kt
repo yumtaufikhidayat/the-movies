@@ -2,8 +2,6 @@ package com.yumtaufikhidayat.themovies.model.cast
 
 
 import com.google.gson.annotations.SerializedName
-import com.yumtaufikhidayat.themovies.model.cast.Cast
-import com.yumtaufikhidayat.themovies.model.cast.Crew
 
 data class MovieCastResponse(
     @SerializedName("cast")

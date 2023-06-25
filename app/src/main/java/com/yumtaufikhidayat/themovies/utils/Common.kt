@@ -58,7 +58,6 @@ fun showToast(context: Context, message: String) {
 }
 
 
-
 fun showError(tag: String, message: String) {
     Log.e(tag, "Error: $message")
 }

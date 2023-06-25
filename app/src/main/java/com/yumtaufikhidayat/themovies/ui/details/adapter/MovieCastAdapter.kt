@@ -10,7 +10,7 @@ import com.yumtaufikhidayat.themovies.databinding.ItemCastBinding
 import com.yumtaufikhidayat.themovies.model.cast.Cast
 import com.yumtaufikhidayat.themovies.utils.loadImage
 
-class MovieCastAdapter : ListAdapter<Cast, MovieCastAdapter.ViewHolder>(castDiffCallback){
+class MovieCastAdapter : ListAdapter<Cast, MovieCastAdapter.ViewHolder>(castDiffCallback) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
@@ -26,7 +26,8 @@ class MovieCastAdapter : ListAdapter<Cast, MovieCastAdapter.ViewHolder>(castDiff
         holder.bind(getItem(position))
     }
 
-    inner class ViewHolder(private val binding: ItemCastBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class ViewHolder(private val binding: ItemCastBinding) :
+        RecyclerView.ViewHolder(binding.root) {
         fun bind(data: Cast) {
             binding.apply {
                 imgPoster.loadImage(data.profilePath)

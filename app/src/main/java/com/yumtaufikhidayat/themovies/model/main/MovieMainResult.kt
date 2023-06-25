@@ -35,4 +35,4 @@ data class MovieMainResult(
     val voteAverage: Double = 0.0, // 7.5
     @SerializedName("vote_count")
     val voteCount: Int = 0 // 1456
-): Parcelable
+) : Parcelable

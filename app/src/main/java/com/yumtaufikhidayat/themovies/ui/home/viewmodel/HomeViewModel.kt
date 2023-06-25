@@ -10,6 +10,6 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     private val repository: TheMovieRepository
-): ViewModel() {
+) : ViewModel() {
     fun getMovieNowPlaying() = repository.getMovieNowPlaying().cachedIn(viewModelScope)
 }

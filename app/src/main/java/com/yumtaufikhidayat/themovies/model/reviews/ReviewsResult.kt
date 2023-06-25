@@ -2,7 +2,6 @@ package com.yumtaufikhidayat.themovies.model.reviews
 
 
 import com.google.gson.annotations.SerializedName
-import com.yumtaufikhidayat.themovies.model.reviews.AuthorDetails
 
 data class ReviewsResult(
     @SerializedName("author")
