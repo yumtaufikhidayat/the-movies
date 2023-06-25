@@ -8,6 +8,6 @@ import javax.inject.Inject
 @HiltViewModel
 class DiscoverViewModel @Inject constructor(
     private val repository: TheMovieRepository
-): ViewModel() {
+) : ViewModel() {
     fun discoverMovie(query: String) = repository.discoverMovie(query)
 }
