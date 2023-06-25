@@ -12,6 +12,7 @@ import com.yumtaufikhidayat.themovies.databinding.FragmentSplashScreenBinding
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import kotlin.time.Duration.Companion.seconds
 
 @AndroidEntryPoint
 class SplashScreenFragment : Fragment() {
@@ -35,7 +36,7 @@ class SplashScreenFragment : Fragment() {
 
     private fun navigateToHome() {
         lifecycleScope.launch {
-            delay(2000L)
+            delay(2.seconds)
             findNavController().apply {
                 popBackStack()
                 navigate(R.id.homeFragment)
